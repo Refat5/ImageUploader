@@ -1,0 +1,33 @@
+                                        Answer to the question no 2
+                                --------------------------------------
+
+       when user faced this issue then i  would like to some question to user .
+       
+       1/ First of all I will ask the user to check his internet speed  
+       2/ Does it download slowly on your device or does it download fine on other devices?
+       3/ Are there any large files in your list?
+       4/ Is this problem already in the system? Or just happening today
+       
+       If there is an issue on the user side then I will tell the user how he can fix it
+       or if this issue generate from our system Then we will make some changes to our system ..
+       
+        -> Compress the data to zip file before downloading, it should be reduce the file size 
+        -> remove unnecessary data before downloading
+        -> divide the data into smaller then download 
+        -> Downloading 100 employee information instead of downloading 1000 employee information at once
+        
+        
+                                     Answer to the question no 1
+                                --------------------------------------
+         I would ask to some question ...
+         
+         1/ What is the size of the file you have uploaded?
+         2/ How long does it take to upload?
+
+                        Solution
+                    --------------
+         -> Compress the PDF File before uploading 
+         -> Before uploading the PDF file, inform the user maximum file size
+         -> Showing a beautiful interface when  file upload start 
+         -> When  user uploads the PDF file he needs to  access to other modules after uploading complete send him a notification 
+             like "Your File uploaded successfully!"
