@@ -9,12 +9,13 @@
         <hr>
 
         <div class="row">
+
             @foreach ($images as $image)
-                <div class="col-md-3 card shadow p-3  mb-3 bg-white rounded">
-                    <img src="{{ asset($image->path) }}" onerror="this.src='{{ asset('error.png') }}'" alt="">
+                <div class="col-md-3 card shadow p-3 mb-3 bg-white rounded">
+                    <img src="{{ asset('storage/images/' . $image['path']) }}" onerror="this.src='{{ asset('error.png') }}'"
+                        alt="">
                 </div>
             @endforeach
-
         </div>
 
     </div>

@@ -21,7 +21,7 @@ class RegisterController extends Controller
     {  
         $data = $request->all();
          $this->create($data);
-        return redirect("dashboard")->withSuccess('Great! You have Successfully loggedin');
+        return redirect("login");
     }
    
 

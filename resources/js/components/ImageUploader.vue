@@ -8,18 +8,14 @@
 					</h4>
 					<hr>
 					<div class="card-body">
-						<div v-if="!message">
-							<div class="preview_image">
-								<img :src="image_url" v-if="image_url" height="200" alt="Preview">
-							</div>
+						<div class="preview_image">
+							<img :src="image_url || default_image" height="250" alt="Preview">
 						</div>
-						<div v-else>
-							<p class="text-center bg-green">{{ message }}</p>
-						</div>
+
 						<div class="form-group row">
-							<label for="password" class="col-md-4 col-form-label text-md-right">Image Url</label>
+							<label for="password" class="col-md-3 col-form-label text-md-right">Image Url</label>
 							<div class="col-md-6">
-								<input type="text" class="form-control" v-model="image_url" placeholder="Enter image URL" @input="previewImage">
+								<input type="text" class="form-control" v-model="image_url" placeholder="Enter image URL">
 							</div>
 							<button class="btn btn-success" @click="uploadImage">Upload</button>
 						</div>
@@ -39,21 +35,24 @@ export default {
 	data() {
 		return {
 			image_url: "",
-			message: "",
+			default_image: "/error.png",
 		};
 	},
 	methods: {
-		previewImage() {},
 		uploadImage() {
 			if (this.image_url) {
 				axios
 					.post("/api/image-upload", { image_url: this.image_url })
 					.then((response) => {
-						this.message = response.data.message;
+						toastr.success(response.data.message);
 						this.image_url = "";
-						this.$router.push("/image-list");
+						setTimeout(() => {
+							window.location.href = "/image";
+						}, 1000);
 					})
 					.catch((error) => {
+						console.log(error.response.data.message);
+						toastr.error(error.response.data.message);
 						console.log(error.response.data);
 					});
 			}
